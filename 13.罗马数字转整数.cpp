@@ -4,6 +4,7 @@
  * [13] 罗马数字转整数
  */
 #include <string>
+#include<iostream>
 #include <map>
 using namespace std;
 class Solution
@@ -32,3 +33,11 @@ public:
         return res;
     }
 };
+
+int main(){
+    Solution* k = new Solution;
+    cout<<k->romanToInt("III")<<endl;
+    delete k;
+    return 0;
+}
+
