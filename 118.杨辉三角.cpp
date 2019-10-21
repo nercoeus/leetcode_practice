@@ -6,13 +6,14 @@
 
 // @lc code=start
 #include <vector>
+#include<iostream>
 using namespace std;
 class Solution
 {
 public:
-    vector<vector<int>> generate(int numRows)
+    vector<vector<int> > generate(int numRows)
     {
-        vector<vector<int>> res;
+        vector<vector<int> > res;
         for (int i = 0; i < numRows; i++)
         {
             vector<int> t(i+1);
@@ -27,4 +28,5 @@ public:
         return res;
     }
 };
+
 // @lc code=end
