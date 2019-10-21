@@ -13,7 +13,6 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-#include <stack>
 using namespace std;
 class Solution
 {
@@ -22,27 +21,26 @@ public:
     {
         ListNode* h1 = headA;
         ListNode* h2 = headB;
-        stack<ListNode*> s1;
-        stack<ListNode*> s2;
+        int l1 = 0, l2 = 0;
         while(h1 != NULL){
-            s1.push(h1);
+            l1++;
             h1 = h1->next;
         }
         while(h2 != NULL){
-            s2.push(h2);
+            l2++;
             h2 = h2->next;
         }
-        ListNode* res = NULL;
-        while(!s1.empty() && !s2.empty()){
-            if (s1.top() == s2.top()){
-                res = s1.top();
-                s1.pop();
-                s2.pop();
-            } else{
-                break;
-            }
+        int diff = std::abs(l1-l2);
+        if(l1 < l2){ swap(headA, headB);}
+        while(diff > 0){
+            headA = headA->next;
+            diff--;
         }
-        return res;
+        while(headB != headA){
+            headA = headA->next;
+            headB = headB->next;
+        }
+        return headA;
     }
 };
 // @lc code=end
