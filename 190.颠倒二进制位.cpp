@@ -21,6 +21,7 @@ public:
             ret |= tb[cur];
             n = n >> 4;
         }
+        return ret;
     }
 };
 // @lc code=end
